@@ -45,7 +45,6 @@ print("autotrade start")
 # 자동매매 시작
 while True:
     try:
-        print("기다리는중")
 
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-BTC")
@@ -59,12 +58,10 @@ while True:
                 krw = get_balance("KRW")
                 if krw > 5000:
                     upbit.buy_market_order("KRW-BTC", krw*0.9995)
-                    print("매수 ?")
         else:
             btc = get_balance("BTC")
             if btc > 0.00008:
                 upbit.sell_market_order("KRW-BTC", btc*0.9995)
-                print("매도 ?")
         time.sleep(1)
     except Exception as e:
         print(e)
