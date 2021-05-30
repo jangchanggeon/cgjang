@@ -4,8 +4,8 @@ import datetime
 import schedule
 from fbprophet import Prophet
 
-access = "cLEsxuEiRTBjq8xFg1fYeIpmwierxI3ri68Olh5m"
-secret = "Q2F1dQ8HIp8VqJUuBikoHIyiMdEjFkJ2x5qb9BCe"
+access = "PzNcvx2BgKxDnMPa2R69YebXMh4zJ2FjA5xUEnL5"
+secret = "uWjSQU5O8qPaJYFwXPr7X1eb0gI1MgnOVYsAQ2PF"
 
 def get_target_price(ticker, k):
     """변동성 돌파 전략으로 매수 목표가 조회"""
@@ -76,7 +76,7 @@ while True:
                     upbit.buy_market_order("KRW-BTC", krw*0.9995)
         else:
             btc = get_balance("BTC")
-            if btc > 0.00012:
+            if btc > 0.00008:
                 upbit.sell_market_order("KRW-BTC", btc*0.9995)
         time.sleep(1)
     except Exception as e:
